@@ -54,7 +54,8 @@ COPY dash_network-0.0.1-py3-none-any.whl tmp/dash_network-0.0.1-py3-none-any.whl
 RUN pip3 install /tmp/mol3d_dash-0.0.1-py3-none-any.whl && rm tmp/mol3d_dash-0.0.1-py3-none-any.whl
 RUN pip3 install /tmp/dash_network-0.0.1-py3-none-any.whl && rm tmp/dash_network-0.0.1-py3-none-any.whl
 RUN cd tmp && pip3 install . && rm -rf RePathDB setup.py README.md && cd ..
-RUN service neo4j start && sleep 5 && neomodel_install_labels RePathDB RePathDB.graph --db bolt://neo4j:repathdb@localhost:7687 && service neo4j stop
+RUN service neo4j start && sleep 15 && neomodel_install_labels RePathDB RePathDB.graph --db bolt://neo4j:repathdb@localhost:7687 && service neo4j stop
+LABEL desc = "new"
 # setup MarvinJS
 COPY mjs /usr/local/lib/python3.6/dist-packages/RePathDB/wui/assets/mjs
 COPY RePathDB /usr/local/lib/python3.6/dist-packages/RePathDBb/wui/assets/

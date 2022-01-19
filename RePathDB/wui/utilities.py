@@ -99,7 +99,7 @@ def get_mrv(structure):
     with StringIO() as f:
         with MRVWrite(f) as o:
             o.write(structure)
-            return f.getvalue()
+        return f.getvalue()
 
 
 def cleanDB():
