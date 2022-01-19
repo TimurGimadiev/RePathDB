@@ -6,6 +6,8 @@ Click Download Packaged Archive
 
 extract it as mjs and put into project directory
 
+tested with marvinjs-22.1.0-all
+
 DOCKER INSTALLATION
 =====
 docker build -f Dockerfile_with_jupyter . -t repathdb:jupyter
